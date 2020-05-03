@@ -1,19 +1,11 @@
 import 'package:flutter/material.dart';
-import '../centered_title.dart';
+import '../widgets/centered_title.dart';
 import '../widgets/books_horizontal_preview.dart';
 import '../widgets/quotes_widget.dart';
 
 import '../widgets/books_slider.dart';
 
 class HomePage extends StatelessWidget {
-  final List colors = [
-    Colors.red,
-    Colors.black,
-    Colors.blue,
-    Colors.yellow,
-    Colors.grey,
-    Colors.green
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

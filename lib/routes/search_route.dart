@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import '../centered_title.dart';
+import '../widgets/centered_title.dart';
 
 class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: <Widget>[
-        separate(50),
-        CenteredTitle('بحث'),
-        separate(30)
-      ],
+      children: <Widget>[separate(50), CenteredTitle('بحث'), separate(30)],
     );
   }
 

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:notebook/routes/home_route.dart';
 import 'package:notebook/routes/search_route.dart';
-import 'rtl_bottom_bar.dart';
+import 'package:notebook/static_values.dart';
+import 'widgets/rtl_bottom_bar.dart';
 
 void main() => runApp(MyApp());
 
@@ -34,15 +35,15 @@ class _MyApp extends State<MyApp> {
           duration: Duration(milliseconds: 800), curve: Curves.ease),
       backgroundColor: Colors.white,
       items: _items,
-      textColor: Color(0xfff95563),
-      selectedItemColor: Color(0xfff95563),
+      textColor: Values.primaryColor,
+      selectedItemColor: Values.primaryColor,
+      accentColor: Values.accentColor,
     );
   }
 
   final controller = PageController(
     initialPage: 0,
   );
-
   Widget _buildPageView() => PageView(
         children: _routes,
         controller: controller,
@@ -54,10 +55,15 @@ class _MyApp extends State<MyApp> {
         },
       );
 
+  ThemeData appTheme() => ThemeData(
+      fontFamily: 'Gulf',
+      accentColor: Values.accentColor,
+      primaryColor: Values.primaryColor);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(fontFamily: 'Gulf'),
+      theme: appTheme(),
       home: Scaffold(
         body: _buildPageView(),
         bottomNavigationBar: _buildRTLBottomBar(),

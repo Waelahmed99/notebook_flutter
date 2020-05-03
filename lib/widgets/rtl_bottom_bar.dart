@@ -8,6 +8,7 @@ class RTLBottomBar extends StatefulWidget {
   final ValueChanged<int> onTap;
   final Color textColor;
   final Color selectedItemColor;
+  final Color accentColor;
 
   RTLBottomBar(
       {@required this.items,
@@ -15,7 +16,8 @@ class RTLBottomBar extends StatefulWidget {
       this.backgroundColor,
       this.onTap,
       this.textColor,
-      this.selectedItemColor});
+      this.selectedItemColor,
+      this.accentColor});
 
   @override
   State<StatefulWidget> createState() => _RTLBottomBarState();
@@ -56,7 +58,7 @@ class _RTLBottomBarState extends State<RTLBottomBar> {
         duration: Duration(milliseconds: 650),
         padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 6.0),
         decoration: BoxDecoration(
-            color: state ? Color(0xfffeebee) : null,
+            color: state ? widget.accentColor : null,
             borderRadius: state ? BorderRadius.circular(20) : null),
         child: _buildItem(item, state),
       ),
