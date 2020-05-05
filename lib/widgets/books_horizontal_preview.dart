@@ -1,21 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:notebook/routes/more_books_route.dart';
 import 'package:notebook/static_values.dart';
 
 class HorizontalPreview extends StatelessWidget {
   final String title;
   HorizontalPreview(this.title);
 
-  Widget _buildMoreButton() => Container(
-        margin: const EdgeInsets.all(8.0),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: Values.accentColor,
-        ),
-        child: Padding(
-          padding: const EdgeInsets.only(left: 6, right: 6, top: 2, bottom: 2),
-          child: Text(
-            'المزيد',
-            style: TextStyle(color: Values.primaryColor),
+  Widget _buildMoreButton(BuildContext context) => GestureDetector(
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => MoreBooksPage(title)));
+        },
+        child: Container(
+          margin: const EdgeInsets.all(8.0),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: Values.accentColor,
+          ),
+          child: Padding(
+            padding:
+                const EdgeInsets.only(left: 6, right: 6, top: 2, bottom: 2),
+            child: Text(
+              'المزيد',
+              style: TextStyle(color: Values.primaryColor),
+            ),
           ),
         ),
       );
@@ -28,10 +36,10 @@ class HorizontalPreview extends StatelessWidget {
         ),
       );
 
-  Widget _buildInfoRow() => Row(
+  Widget _buildInfoRow(BuildContext context) => Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          _buildMoreButton(),
+          _buildMoreButton(context),
           _buildTitleText(),
         ],
       );
@@ -53,7 +61,7 @@ class HorizontalPreview extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        _buildInfoRow(),
+        _buildInfoRow(context),
         Container(
           width: MediaQuery.of(context).size.width,
           height: 100,

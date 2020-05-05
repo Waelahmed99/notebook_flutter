@@ -6,6 +6,8 @@ import '../widgets/quotes_widget.dart';
 import '../widgets/books_slider.dart';
 
 class HomePage extends StatelessWidget {
+  final String content = 'كيف احتملنا وعشنا وانزلقت شربة الماء من الحلق دون أن نشرق بها ونختنق؟ وما جدوى استحضار ما تحملناه وإعادته بالكلام؟ عند موت من نحب نكفنه، نلفه برحمة ونحفر في الأرض عميقاً..';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +22,7 @@ class HomePage extends StatelessWidget {
             separate(20),
             HorizontalPreview('الأحدث قراءة'),
             separate(10),
-            QuoteWidget(),
+            QuoteWidget(bookName: 'اسم الكتاب', writerName: 'اسم الكاتب', content: content),
             separate(10),
             HorizontalPreview('الأكثر مبيعاً'),
             separate(10)
