@@ -53,6 +53,12 @@ flutter:
    - assets/quote_up.svg
    - assets/quote_down.svg
    - assets/book_image.png
+   - assets/profile_background.svg
+   - assets/heart.svg
+   - assets/chat.svg
+   - assets/terms.svg
+   - assets/star.svg
+   - assets/share.svg
    
   fonts:
     - family: Gulf

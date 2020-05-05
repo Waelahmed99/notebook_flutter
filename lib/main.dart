@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notebook/routes/home_route.dart';
+import 'package:notebook/routes/more_route.dart';
 import 'package:notebook/routes/search_route.dart';
 import 'package:notebook/static_values.dart';
 import 'widgets/rtl_bottom_bar.dart';
@@ -25,7 +26,7 @@ class _MyApp extends State<MyApp> {
     HomePage(),
     SearchPage(),
     Center(child: Text('كتبي')),
-    Center(child: Text('المزيد')),
+    MorePage()
   ];
 
   Widget _buildRTLBottomBar() {
