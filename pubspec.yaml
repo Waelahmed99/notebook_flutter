@@ -60,6 +60,8 @@ flutter:
    - assets/terms.svg
    - assets/star.svg
    - assets/share.svg
+   - assets/read.svg
+   - assets/listen.svg
    
   fonts:
     - family: Gulf

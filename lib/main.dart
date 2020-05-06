@@ -4,6 +4,7 @@ import 'package:notebook/routes/more_route.dart';
 import 'package:notebook/routes/search_route.dart';
 import 'package:notebook/static_values.dart';
 import 'widgets/rtl_bottom_bar.dart';
+import 'routes/my_books_route.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,8 +26,8 @@ class _MyApp extends State<MyApp> {
   List<Widget> _routes = [
     HomePage(),
     SearchPage(),
-    Center(child: Text('كتبي')),
-    MorePage()
+    MyBooksPage(),
+    MorePage(),
   ];
 
   Widget _buildRTLBottomBar() {

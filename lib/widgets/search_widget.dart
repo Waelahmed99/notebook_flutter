@@ -10,12 +10,28 @@ class SearchWidget extends StatelessWidget {
       padding: EdgeInsets.all(5),
       child: SvgPicture.asset('assets/search.svg', width: 15));
 
-  Widget _buildText() => Text('سيرة', style: TextStyle(fontSize: 16));
+  Widget _buildText() => Directionality(
+        textDirection: TextDirection.rtl,
+        child: TextField(
+          onSubmitted: (value) {},
+          cursorColor: Values.primaryColor,
+          maxLines: 1,
+          // textDirection: TextDirection.rtl,
+          decoration: InputDecoration(
+            hintText: 'بحث',
+            border: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            errorBorder: InputBorder.none,
+            disabledBorder: InputBorder.none,
+          ),
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: EdgeInsets.only(left: 15, right: 15, top: 10),
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       width: MediaQuery.of(context).size.width,
       height: 50,
@@ -26,7 +42,7 @@ class SearchWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
-          _buildText(),
+          Flexible(child: _buildText()),
           _buildSeparateLine(),
           _buildSvgIcon(),
         ],
