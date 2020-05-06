@@ -11,11 +11,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
-            separate(50),
             SafeArea(child: CenteredTitle('الرئيسية')),
             separate(30),
             SliderList(),
